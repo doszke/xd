@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="tabBramkowanieNapiecie" text="Zależność parametrów bramkowania od napięcia">
+               <content>
+                  <BorderPane fx:id="r">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                     <center>
+                        <LineChart fx:id="chartBramowanieNapiecie" BorderPane.alignment="CENTER">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </center>
+                  </BorderPane>
+               </content></Tab>
+          <Tab fx:id="tabNapiecieCzas" text="Zależność napięcia od czasu">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <LineChart fx:id="lineChartTemp" BorderPane.alignment="CENTER">
+                          <xAxis>
+                            <CategoryAxis side="RIGHT" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </center>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                     <top>
+                        <HBox BorderPane.alignment="CENTER">
+                           <children>
+                              <Label maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="Natężenie: ">
+                                 <font>
+                                    <Font name="Georgia" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="textFieldNapiecieCzas" />
+                           </children>
+                        </HBox>
+                     </top>
+                  </BorderPane>
+               </content>
+               <graphic>
+                  <Label fx:id="labelTime" maxWidth="-Infinity">
+                     <font>
+                        <Font name="Georgia Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </graphic></Tab>
+            <Tab fx:id="tabPradyCzas" text="Zależność prądów jonowych od czasu">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                     <top>
+                        <HBox BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="Natężenie: ">
+                                       <font>
+                                          <Font name="Georgia" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="2.0" top="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="textFieldPradyCzas">
+                                       <HBox.margin>
+                                          <Insets right="15.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </top>
+                     <center>
+                        <LineChart fx:id="chartPradyCzas" BorderPane.alignment="CENTER">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </center>
+                  </BorderPane>
+               </content></Tab>
+            <Tab fx:id="tabBramkowanieCzas" text="Zależność wartości parametrów bramkowania od czasu">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                     <center>
+                        <LineChart fx:id="chartBramkowanieCzas" BorderPane.alignment="CENTER">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </center>
+                     <top>
+                        <HBox BorderPane.alignment="CENTER">
+                           <children>
+                              <Label maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="Natężenie: ">
+                                 <font>
+                                    <Font name="Georgia" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="textFieldBramokwanieCzas" />
+                           </children>
+                        </HBox>
+                     </top>
+                  </BorderPane>
+               </content></Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
